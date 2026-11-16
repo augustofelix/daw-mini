@@ -1,0 +1,19 @@
+# Clarificaciones · FEAT-001
+- **P1:** ¿Lista exacta de palabras clave y dónde se buscan?
+  - **R:** En título + descripción, por familias de expresiones según intención. Alta: caído, se cayó, no funciona, no anda, no puedo entrar, urgente, crítico, bloqueado. Media: lento, tarda, demora, error, falla.
+- **P1b:** ¿Cuentan las variantes? Recomendación: lista explícita de variantes por familia, siempre por palabra completa ("terror" no matchea "error"). Alta: caído/caída/caídos/caídas, se cayó/se cayeron, no funciona/no funcionan, no anda/no andan, no puedo entrar, urgente/urgentes, crítico/crítica/críticos/críticas, bloqueado/bloqueada/bloqueados/bloqueadas. Media: lento/lenta/lentos/lentas, tarda/tardan, demora/demoran, error/errores, falla/fallas/fallan.
+  - **R:** ok.
+- **P2:** ¿Se ignoran mayúsculas y tildes?
+  - **R:** Sí. Si matchea alta y media, gana la más alta.
+- **P3:** ¿Cómo se identifica a un cliente VIP?
+  - **R:** Lista fija en el código: `acme` y `globex`.
+- **P4:** ¿Cuánto sube la prioridad de un VIP?
+  - **R:** Sube un nivel; alta queda alta.
+- **P5:** ¿Qué formato tiene el motivo?
+  - **R:** Corto, tipo "media: matcheó 'lenta'; +1 por cliente VIP", sin copiar texto libre del ticket.
+- **P5b:** Con VIP, ¿qué nivel va al principio del motivo? Recomendación: el nivel final (ej. `"alta: matcheó 'lenta'; +1 por cliente VIP"`).
+  - **R:** ok.
+- **P5c:** ¿Qué palabra se muestra? Recomendación: la variante encontrada, escrita como está en la lista; si hay varias, la primera según el orden de la lista.
+  - **R:** ok.
+- **P5d:** ¿Casos borde del motivo? Recomendación: sin coincidencias `"baja: sin coincidencias"`; VIP sin coincidencias `"media: sin coincidencias; +1 por cliente VIP"`; VIP que ya era alta `"alta: matcheó 'caído'; cliente VIP, ya era alta"`.
+  - **R:** ok.
